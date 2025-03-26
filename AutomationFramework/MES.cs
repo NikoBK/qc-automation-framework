@@ -13,9 +13,13 @@ namespace automationframework
         public Dictionary<int, Station> Stations { get; private set; }
         public Dictionary<int, Mover> Movers { get; private set; }
 
+        public TransportManager TransportManager { get; private set; }
+
         public MES() {
             Stations = new Dictionary<int, Station>();
             Movers = new Dictionary<int, Mover>();
+
+            TransportManager = new TransportManager();
         }
 
         /// <summary>
@@ -23,6 +27,7 @@ namespace automationframework
         /// </summary>
         public void Start() {
             // TODO: Implement something here.
+            TransportManager.MoveMoverToStation(0, 1); // NOTE: this is just a test
             Console.WriteLine("MES Started!");
         }
     }

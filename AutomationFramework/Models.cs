@@ -24,5 +24,7 @@ namespace automationframework
     public class Station
     {
         string Name { get; set; }
+
+        public virtual void Start() { }
     }
 }
