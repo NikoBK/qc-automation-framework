@@ -1,6 +1,10 @@
 # Documentation
 Project documentation (work in progress)
 
+# Dependencies
+The project uses Python.NET. Download and install this with:\
+`dotnet add package Python.Runtime`
+
 # Build & Run
 **On Windows:**\
 Open a project after starting Visual Studio and locate the `.csproj` file within the project directory.\
