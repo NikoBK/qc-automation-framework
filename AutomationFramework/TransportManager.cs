@@ -2,13 +2,13 @@ using PMCLIB;
 
 namespace automationframework
 {
-    public class TransportManager
+    public class TransportController
     {
         public SystemCommands _sysCmd = new SystemCommands();
         public XBotCommands _xbotCmd = new XBotCommands();
 
-        public TransportManager() {
-            Console.WriteLine("Transport Manager initialized");
+        public TransportController() {
+            Console.WriteLine("Transport Controller initialized");
             bool started = RunStartupRoutine();
             if (started) {
                 Console.WriteLine("Startup routine returned success");

@@ -7,4 +7,19 @@ namespace automationframework
     {
         //TODO: this contains all functions relevant for the liquid handler to work.
     }
+
+    public class FestoActuator : Station
+    {
+        //TODO
+    }
+
+    public class Decapper : Station
+    {
+        //TODO
+    }
+
+    public class VialMixer : Station
+    {
+        //TODO
+    }
 }
