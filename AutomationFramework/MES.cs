@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace automationframework
+namespace AutomationFramework
 {
     /// <summary>
     /// MES: Manufacturing Execution System.

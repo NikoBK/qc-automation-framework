@@ -1,17 +1,20 @@
 using PMCLIB;
 
-namespace automationframework
+namespace AutomationFramework
 {
     public class TransportController
     {
-        public SystemCommands _sysCmd = new SystemCommands();
-        public XBotCommands _xbotCmd = new XBotCommands();
+        private static SystemCommands _sysCmd = new SystemCommands();
+        private static XBotCommands _xbotCmd = new XBotCommands();
 
         public TransportController() {
             Console.WriteLine("Transport Controller initialized");
             bool started = RunStartupRoutine();
             if (started) {
                 Console.WriteLine("Startup routine returned success");
+            }
+            else {
+                Console.WriteLine("Startup routine returned failure");
             }
         }
 

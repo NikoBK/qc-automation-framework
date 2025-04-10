@@ -1,4 +1,4 @@
-namespace automationframework
+namespace AutomationFramework
 {
     public enum VialType {
         Empty = 0,
@@ -7,23 +7,23 @@ namespace automationframework
 
     public class Vial
     {
-        public VialRack Rack { get; set; }
-        public VialType Type { get; set; }
+        public VialRack? Rack { get; set; }
+        public VialType? Type { get; set; }
     }
 
     public class VialRack
     {
-        public Mover Mover;
+        public Mover? Mover;
     }
 
     public class Mover
     {
-        public int Id;
+        public int? Id;
     }
 
     public class Station
     {
-        string Name { get; set; }
+        public string? Name { get; set; }
 
         public virtual void Start() { }
     }

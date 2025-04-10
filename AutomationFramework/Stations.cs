@@ -1,4 +1,9 @@
-namespace automationframework
+using System.Net.Sockets;
+using System.Net;
+using System.Text;
+using System.Threading;
+
+namespace AutomationFramework
 {
     /// <summary>
     /// Handles instances of <cref="Vial"> (digital representation) redirected to it by the <cref="MES">.
@@ -11,6 +16,20 @@ namespace automationframework
     public class FestoActuator : Station
     {
         //TODO
+    }
+
+    public class Capper : Station
+    {
+        public void Cap()
+        {
+            TcpClient cli = new TcpClient(Constants.CapHandlerAddr, Constants.CapHandlerPort);
+            NetworkStream str = cli.GetStream();
+            string msg = "cap";
+            byte[] dat = Encoding.UTF8.GetBytes(msg);
+            str.Write(dat, 0, dat.Length);
+            cli.Close();
+            Thread.Sleep(2000);
+        }
     }
 
     public class Decapper : Station

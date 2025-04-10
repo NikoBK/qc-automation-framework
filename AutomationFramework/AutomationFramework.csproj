@@ -9,6 +9,9 @@
 
   <ItemGroup>
     <PackageReference Include="Python.Runtime" Version="2.7.9" />
+    <Reference Include="PMCLIB">
+	<HintPath>libs/PMCLIB.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
