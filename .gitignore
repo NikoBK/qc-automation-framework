@@ -338,3 +338,6 @@ FodyWeavers.xsd
 *.*~
 .DS_Store
 nupkg/
+
+# Project files
+AutomationFramework/libs/

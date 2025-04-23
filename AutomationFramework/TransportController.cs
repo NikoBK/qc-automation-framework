@@ -1,4 +1,5 @@
 using PMCLIB;
+using System.Numerics;
 
 namespace AutomationFramework
 {
@@ -20,6 +21,13 @@ namespace AutomationFramework
 
         public void MoveMoverToStation(int moverId, int stationId) {
             //TODO implement something here
+        }
+
+        public void MoverToPosition(int moverId, Vector2 pos,
+            ushort cmdLabel = 0, POSITIONMODE posMode = POSITIONMODE.ABSOLUTE, LINEARPATHTYPE pathType = LINEARPATHTYPE.DIRECT,
+                double finalSpdMetersPs = 0, double maxSpdMetersPs = 0.5, double maxAccelerationMetersPs2 = 0)
+        {
+            _xbotCmd.LinearMotionSI(cmdLabel, moverId, posMode, pathType, pos.X, pos.Y, finalSpdMetersPs, maxSpdMetersPs, maxAccelerationMetersPs2);
         }
 
 
