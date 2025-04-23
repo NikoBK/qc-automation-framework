@@ -13,12 +13,14 @@ namespace AutomationFramework
         public Dictionary<int, Station> Stations { get; private set; }
         public Dictionary<int, Mover> Movers { get; private set; }
 
+        public TrafficPlanner TrafficPlanner { get; private set; }
         public TransportController TransportController { get; private set; }
 
         public MES() {
             Stations = new Dictionary<int, Station>();
             Movers = new Dictionary<int, Mover>();
 
+            TrafficPlanner = new TrafficPlanner();
             TransportController = new TransportController();
         }
 
