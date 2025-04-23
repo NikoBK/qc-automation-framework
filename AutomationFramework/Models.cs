@@ -1,3 +1,6 @@
+
+using PMCLIB;
+
 namespace AutomationFramework
 {
     public enum VialType {
@@ -18,7 +21,11 @@ namespace AutomationFramework
 
     public class Mover
     {
-        public int? Id;
+        public int Id;
+
+        public bool IsIdle(XBotCommands cmds) {
+            return cmds.GetXbotStatus(Id).XBOTState == XBOTSTATE.XBOT_IDLE;
+        }
     }
 
     public class Station
