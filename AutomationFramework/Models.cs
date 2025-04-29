@@ -32,8 +32,8 @@ namespace AutomationFramework
     {
         public string? Name { get; set; }
 
-        public virtual void Start() {
-            Console.WriteLine("base function just got start called");
+        public virtual void Start(string name) {
+            Name = name;
         }
     }
 }
