@@ -3,6 +3,10 @@ using System.Numerics;
 
 namespace AutomationFramework
 {
+    /// <summary>
+    /// Responsible for all movements across the entire table surface. This class is ordered by the <see="TrafficPlanner">
+    /// to move one or more movers to a position and/or station.
+    /// </summary>
     public class TransportController
     {
         private static SystemCommands _sysCmd = new SystemCommands();
@@ -19,10 +23,16 @@ namespace AutomationFramework
             }
         }
 
+        /// <summary>
+        /// Moves a <see="Mover"> to a station which has a defined via point deviating from the highway.
+        /// </summary>
         public void MoveMoverToStation(int moverId, int stationId) {
             //TODO implement something here
         }
 
+        /// <summary>
+        /// Moves a <see="Mover"> to a vector2 defined position in planar (2D) environment.
+        /// </summary>
         public void MoverToPosition(int moverId, Vector2 pos,
             ushort cmdLabel = 0, POSITIONMODE posMode = POSITIONMODE.ABSOLUTE, LINEARPATHTYPE pathType = LINEARPATHTYPE.DIRECT,
                 double finalSpdMetersPs = 0, double maxSpdMetersPs = 0.5, double maxAccelerationMetersPs2 = 0)
@@ -30,7 +40,12 @@ namespace AutomationFramework
             _xbotCmd.LinearMotionSI(cmdLabel, moverId, posMode, pathType, pos.X, pos.Y, finalSpdMetersPs, maxSpdMetersPs, maxAccelerationMetersPs2);
         }
 
-
+        /// <summary>
+        /// Returns an int array representing all detected shuttles on the table top.
+        /// The ACOPOS 6D table iterates through each tile recursively starting on the bottom left
+        /// adding detected shuttles (<see="Mover.cs">) with an id according to which order they were
+        /// detected from the table's order.
+        /// </summary>
         public static int[] GetIds()
         {
             XBotIDs xBot_IDs = _xbotCmd.GetXBotIDS();
@@ -38,6 +53,10 @@ namespace AutomationFramework
             return xBotIDs;
         }
 
+        /// <summary>
+        /// Returns a boolean value which represents whether the ACOPOS table has been initialized successfully
+        /// to ensure proper I/O between the AutomationFramework and the PMC controller.
+        /// </summary>
         public static bool RunStartupRoutine(int expectedXbotCount = 0)
         {
             #region Connect to PMC

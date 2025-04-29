@@ -11,6 +11,16 @@ namespace AutomationFramework
     public class LiquidHandler : Station
     {
         //TODO: this contains all functions relevant for the liquid handler to work.
+        public LiquidHandler() {
+
+            Start("Liquid Handler");
+        }
+
+        public override void Start(string name)
+        {
+            base.Start(name);
+            Console.WriteLine($"Unique start code for {Name}");
+        }
     }
 
     public class FestoActuator : Station
