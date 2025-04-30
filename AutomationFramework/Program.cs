@@ -4,10 +4,11 @@
     // https://github.com/NikoBK/qc-automation-framework/issues/3
     class Program
     {
-        public static void Main(string[] args) {
+        public static async Task Main(string[] args)
+        {
             Console.WriteLine("Starting MES...");
             var mes = new MES();
-            mes.Start();
+            await mes.Test();
         }
     }
 }

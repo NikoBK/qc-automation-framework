@@ -12,32 +12,45 @@ namespace AutomationFramework
         private static SystemCommands _sysCmd = new SystemCommands();
         private static XBotCommands _xbotCmd = new XBotCommands();
 
+        // Key: mover id, value: mover instance
+        private readonly Dictionary<int, Mover> _movers = new();
+        private string _prefix = "<TransportController>"; //TODO debugging, remove eventually.
+
         public TransportController() {
             Console.WriteLine("Transport Controller initialized");
             bool started = RunStartupRoutine();
-            if (started) {
-                Console.WriteLine("Startup routine returned success");
+            if (started)
+            {
+                Console.WriteLine("<TransportController>: Started!");
+                var moverIds = GetIds();
+                foreach (var id in moverIds) {
+                    Mover mover = new Mover(id);
+                    _movers.Add(mover.Id, mover);
+                }
             }
             else {
-                Console.WriteLine("Startup routine returned failure");
+                Console.WriteLine("<TransportController>: Startup failed - StartupRoutine failed");
             }
         }
 
-        /// <summary>
-        /// Moves a <see="Mover"> to a station which has a defined via point deviating from the highway.
-        /// </summary>
-        public void MoveMoverToStation(int moverId, int stationId) {
-            //TODO implement something here
+        public async Task MoverToStation(Mover mover, Station station) {
+            await Task.Delay(100); //NOTE placeholder
+            //TODO implement trafficplanner here and calculation a path to a station that takes other mover paths into consideration.
         }
 
-        /// <summary>
-        /// Moves a <see="Mover"> to a vector2 defined position in planar (2D) environment.
-        /// </summary>
-        public void MoverToPosition(int moverId, Vector2 pos,
-            ushort cmdLabel = 0, POSITIONMODE posMode = POSITIONMODE.ABSOLUTE, LINEARPATHTYPE pathType = LINEARPATHTYPE.DIRECT,
-                double finalSpdMetersPs = 0, double maxSpdMetersPs = 0.5, double maxAccelerationMetersPs2 = 0)
+        public async Task MoverToPosition(int id, Vector2 pos)
         {
-            _xbotCmd.LinearMotionSI(cmdLabel, moverId, posMode, pathType, pos.X, pos.Y, finalSpdMetersPs, maxSpdMetersPs, maxAccelerationMetersPs2);
+            if (!_movers.ContainsKey(id)) {
+                Console.WriteLine($"{_prefix} Mover with id: {id} does not exist in the movers dictionary!");
+                return;
+            }
+            var mover = _movers[id];
+            if (!mover.IsIdle(_xbotCmd)) {
+                Console.WriteLine($"{_prefix} Mover with id: {mover.Id} is not idle and cannot make a new movement right now");
+                return;
+            }
+
+            await mover.MoverToPosition(_xbotCmd, pos);
         }
 
         /// <summary>

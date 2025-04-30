@@ -1,4 +1,4 @@
-using System.Collections;
+using System.Numerics;
 
 namespace AutomationFramework
 {
@@ -24,13 +24,12 @@ namespace AutomationFramework
             TransportController = new TransportController();
         }
 
-        /// <summary>
-        /// Start the MES system, see <cref="MES"> on how it operates after start.
-        /// </summary>
-        public void Start() {
-            // TODO: Implement something here.
-            TransportController.MoveMoverToStation(0, 1); // NOTE: this is just a test
-            Console.WriteLine("MES Started!");
+        public async Task Test() { //TODO for testing, remove eventually or refactor to start
+            _ = TransportController.MoverToPosition(1, new Vector2(0.660f, 0.450f));
+            await Task.Delay(300); // Simulate time passing (test buffer)
+            _ = TransportController.MoverToPosition(3, new Vector2(0.660f, 0.450f)); //TODO use better coords
+
+            await Task.Delay(1500); // let everything finish
         }
     }
 }
