@@ -18,5 +18,8 @@ namespace AutomationFramework
             {4, new Vector2(0.060f, 0.900f)},
             {5, new Vector2(0.660f, 0.900f)},
         };
+
+        public static Vector2 TestPos1 = new Vector2(0.650f, 0.900f);
+        public static Vector2 TestPos2 = new Vector2(0.050f, 0.550f);
     }
 }

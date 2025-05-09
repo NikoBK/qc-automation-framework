@@ -52,10 +52,14 @@ namespace AutomationFramework
         /// </summary>
         public async Task MoverToPosition(XBotCommands cmd, Vector2 pos,
             ushort cmdLabel = 0, POSITIONMODE posMode = POSITIONMODE.ABSOLUTE, LINEARPATHTYPE pathType = LINEARPATHTYPE.DIRECT,
-            double finalSpdMetersPs = 0, double maxSpdMetersPs = 0.5, double maxAccelerationMetersPs2 = 0)
+            double finalSpdMetersPs = 0, double maxSpdMetersPs = 0.5, double maxAccelerationMetersPs2 = 10)
         {
+            Console.WriteLine($"Shuttle {Id} is moving!");
             cmd.LinearMotionSI(cmdLabel, Id, posMode, pathType, pos.X, pos.Y, finalSpdMetersPs, maxSpdMetersPs, maxAccelerationMetersPs2);
+            Console.WriteLine("finished moving");
+
             await Task.Delay(1000); // Buffer time to get the mover moving.
+            Console.WriteLine("time delay of 1s passed");
         }
     }
 

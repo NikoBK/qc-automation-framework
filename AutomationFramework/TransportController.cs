@@ -26,6 +26,7 @@ namespace AutomationFramework
                 foreach (var id in moverIds) {
                     Mover mover = new Mover(id);
                     _movers.Add(mover.Id, mover);
+                    Console.WriteLine($"Mover with id {id} has been initialized");
                 }
             }
             else {
@@ -40,6 +41,7 @@ namespace AutomationFramework
 
         public async Task MoverToPosition(int id, Vector2 pos)
         {
+            Console.WriteLine($"Trying to move mover with id: {id} to defined position: {pos.X},{pos.Y}");
             if (!_movers.ContainsKey(id)) {
                 Console.WriteLine($"{_prefix} Mover with id: {id} does not exist in the movers dictionary!");
                 return;
@@ -51,6 +53,7 @@ namespace AutomationFramework
             }
 
             await mover.MoverToPosition(_xbotCmd, pos);
+            Console.WriteLine($"Mover ({id}) was succesfully moved to position!");
         }
 
         /// <summary>

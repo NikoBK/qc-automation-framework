@@ -25,9 +25,12 @@ namespace AutomationFramework
         }
 
         public async Task Test() { //TODO for testing, remove eventually or refactor to start
-            _ = TransportController.MoverToPosition(1, new Vector2(0.660f, 0.450f));
-            await Task.Delay(300); // Simulate time passing (test buffer)
-            _ = TransportController.MoverToPosition(3, new Vector2(0.660f, 0.450f)); //TODO use better coords
+            // test coord #1: X: 650, Y:900
+            // test coord #2: X: 50, Y:550
+            _ = TransportController.MoverToPosition(1, Constants.TestPos1);
+            await Task.Delay(2000); // Simulate time passing (test buffer)
+            //_ = TransportController.MoverToPosition(1, new Vector2(0.050f, 0.550f));
+            //_ = TransportController.MoverToPosition(3, new Vector2(0.860f, 0.450f)); //TODO use better coords
 
             await Task.Delay(1500); // let everything finish
         }

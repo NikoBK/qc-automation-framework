@@ -12,6 +12,10 @@ namespace AutomationFramework
             Console.WriteLine("traffic planner initialized");
         }
 
+        public void Initialize() {
+
+        }
+
         //TODO implement some kind of path planning here.
     }
 }
