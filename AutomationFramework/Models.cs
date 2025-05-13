@@ -73,4 +73,23 @@ namespace AutomationFramework
             State = MachineState.IDLE;
         }
     }
+
+    public class Chunk
+    {
+        public int Id { get; private set; }
+        public List<Tile> Tiles = new List<Tile>();
+
+        public Chunk(int id) {
+            Id = id;
+        }
+    }
+
+    public class Tile
+    {
+        public int Id { get; private set; }
+
+        public Tile(int id) {
+            Id = id;
+        }
+    }
 }
