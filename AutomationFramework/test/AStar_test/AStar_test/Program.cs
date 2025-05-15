@@ -23,12 +23,13 @@ namespace AStar_test
 
                 var grid = gridData.Data();
                 int[] goalPoint = new int[2];
-                goalPoint[0] = 5;
-                goalPoint[1] = 0;
+                goalPoint[0] = 1;
+                goalPoint[1] = 1;
 
                 pathHandler.pathing(xbotIDs[0], goalPoint, grid);
 
-                Console.WriteLine($"{Routines.GetXbotGridPoint(xbotIDs[0])[0]}, {Routines.GetXbotGridPoint(xbotIDs[0])[1]}");
+                Console.WriteLine($"Desired end point: {goalPoint[0]}, {goalPoint[1]}");
+                Console.WriteLine($"End point reached: {Routines.GetXbotGridPoint(xbotIDs[0])[0]}, {Routines.GetXbotGridPoint(xbotIDs[0])[1]}");
             }
             else
             {
