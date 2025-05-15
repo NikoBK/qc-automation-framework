@@ -51,7 +51,7 @@ namespace AutomationFramework
         /// Moves a <see="Mover"> to a vector2 defined position in planar (2D) environment.
         /// </summary>
         public async Task MoverToPosition(XBotCommands cmd, Vector2 pos,
-            ushort cmdLabel = 0, POSITIONMODE posMode = POSITIONMODE.ABSOLUTE, LINEARPATHTYPE pathType = LINEARPATHTYPE.DIRECT,
+            ushort cmdLabel = 0, POSITIONMODE posMode = POSITIONMODE.ABSOLUTE, LINEARPATHTYPE pathType = LINEARPATHTYPE.XTHENY,
             double finalSpdMetersPs = 0, double maxSpdMetersPs = 0.5, double maxAccelerationMetersPs2 = 10)
         {
             Console.WriteLine($"Shuttle {Id} is moving!");

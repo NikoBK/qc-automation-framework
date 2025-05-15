@@ -25,8 +25,10 @@ namespace AutomationFramework
                 var moverIds = GetIds();
                 foreach (var id in moverIds) {
                     Mover mover = new Mover(id);
+                    var posX = (float)_xbotCmd.GetAllXbotInfo().AllXbotInfoList[id - 1].XPos;
+                    var posY = (float)_xbotCmd.GetAllXbotInfo().AllXbotInfoList[id - 1].YPos;
                     _movers.Add(mover.Id, mover);
-                    Console.WriteLine($"Mover with id {id} has been initialized");
+                    Console.WriteLine($"Mover with id {id} has been initialized at: {posX.ToString()},{posY.ToString()}");
                 }
             }
             else {
@@ -39,7 +41,7 @@ namespace AutomationFramework
             //TODO implement trafficplanner here and calculation a path to a station that takes other mover paths into consideration.
         }
 
-        public async Task MoverToPosition(int id, Vector2 pos)
+        public async Task MoverToPosition(int id, Vector2 pos, LINEARPATHTYPE pathType, double spd, double maxAccel)
         {
             Console.WriteLine($"Trying to move mover with id: {id} to defined position: {pos.X},{pos.Y}");
             if (!_movers.ContainsKey(id)) {
@@ -52,7 +54,7 @@ namespace AutomationFramework
                 return;
             }
 
-            await mover.MoverToPosition(_xbotCmd, pos);
+            await mover.MoverToPosition(_xbotCmd, pos, pathType: pathType, maxSpdMetersPs: spd, maxAccelerationMetersPs2: maxAccel);
             Console.WriteLine($"Mover ({id}) was succesfully moved to position!");
         }
 
@@ -96,6 +98,9 @@ namespace AutomationFramework
             {
                 Console.WriteLine("Failed to gain mastership of the system. Error: " + rtnVal.ToString());
                 return false;
+            }
+            else {
+                Console.WriteLine("Succesfully gained mastership!");
             }
             //PMCRTN rtnVal = PMCRTN.ALLOK;
             #endregion Gain Mastership

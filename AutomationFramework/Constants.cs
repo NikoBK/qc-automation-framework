@@ -21,5 +21,9 @@ namespace AutomationFramework
 
         public static Vector2 TestPos1 = new Vector2(0.650f, 0.900f);
         public static Vector2 TestPos2 = new Vector2(0.050f, 0.550f);
+        public static Vector2 TestPos3 = new Vector2(0.175f, 0.100f);
+
+        public static Vector2 AbsTopLeftPos = new Vector2(0.050f, 0.900f);
+        public static Vector2 LiquidHandlerPos = new Vector2(0.830f, 0.875f);
     }
 }
