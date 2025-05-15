@@ -36,8 +36,9 @@
     <Reference Include="PMCLIB">
       <HintPath>..\..\..\libraries\C#\PMCLIB.dll</HintPath>
     </Reference>
-    <Reference Include="Roy-T.AStar, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RoyT.AStar.3.0.2\lib\netstandard2.0\Roy-T.AStar.dll</HintPath>
+    <Reference Include="Roy-T.AStar_time_expanded, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\source\libraries\C#\Roy-T_AStar_time_expanded\Roy-T.AStar\bin\Debug\netstandard2.0\Roy-T.AStar_time_expanded.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -59,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

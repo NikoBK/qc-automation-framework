@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-using Roy_T.AStar.Grids;
-using Roy_T.AStar.Primitives;
-using Roy_T.AStar.Paths;
-using RoySize = Roy_T.AStar.Primitives.Size;
+using Roy_T.AStar_time_expanded.Grids;
+using Roy_T.AStar_time_expanded.Primitives;
+using Roy_T.AStar_time_expanded.Paths;
+using RoySize = Roy_T.AStar_time_expanded.Primitives.Size;
 using DrawSize = System.Drawing.Size;
 
 namespace AStar_test
@@ -48,11 +48,13 @@ namespace AStar_test
             }
             Console.WriteLine($"ACOPOS estimated total travel time: {totalTravelTime}");
 
+            /*
             bool botIdle = false;
             while (!botIdle)
             {
                 botIdle = Routines.XbotIdle(xbotID);
             }
+            */
 
             /* One tile movement time test
             Console.WriteLine($"");
@@ -85,10 +87,10 @@ namespace AStar_test
                 Console.WriteLine($"Recorded travel time move {i}: {oneTileTime}");
             }
             */
-
-            TimeSpan timeElapsed = DateTime.Now - startTime;
-            Console.WriteLine($"");
-            Console.WriteLine($"Recorded travel time: {timeElapsed}");
+            //TimeSpan timeElapsed = DateTime.Now - startTime;
+            
+            //Console.WriteLine($"");
+            //Console.WriteLine($"Recorded travel time: {timeElapsed}");
         }
     }
 }
