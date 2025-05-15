@@ -26,12 +26,16 @@ namespace AutomationFramework
 
         public async Task Test() { //TODO for testing, remove eventually or refactor to start
             for (int i = 0; i < 4; i++) {
+                _ = TransportController.MoverToPosition(1, new Vector2(0.170f, 0.875f), PMCLIB.LINEARPATHTYPE.XTHENY, 0.5, 7);
                 _ = TransportController.MoverToPosition(2, new Vector2(0.650f, 0.875f), PMCLIB.LINEARPATHTYPE.XTHENY, 0.5, 7);
                 await Task.Delay(2000);
+                _ = TransportController.MoverToPosition(1, new Vector2(0.650f, 0.875f), PMCLIB.LINEARPATHTYPE.XTHENY, 0.5, 7);
                 _ = TransportController.MoverToPosition(2, new Vector2(0.650f, 0.100f), PMCLIB.LINEARPATHTYPE.XTHENY, 0.5, 7);
                 await Task.Delay(2000);
+                _ = TransportController.MoverToPosition(1, new Vector2(0.650f, 0.100f), PMCLIB.LINEARPATHTYPE.XTHENY, 0.5, 7);
                 _ = TransportController.MoverToPosition(2, new Vector2(0.170f, 0.100f), PMCLIB.LINEARPATHTYPE.XTHENY, 0.5, 7);
                 await Task.Delay(2000);
+                _ = TransportController.MoverToPosition(1, new Vector2(0.170f, 0.100f), PMCLIB.LINEARPATHTYPE.XTHENY, 0.5, 7);
                 _ = TransportController.MoverToPosition(2, new Vector2(0.170f, 0.875f), PMCLIB.LINEARPATHTYPE.XTHENY, 0.5, 7);
                 await Task.Delay(2000);
             }
