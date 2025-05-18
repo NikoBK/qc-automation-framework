@@ -19,7 +19,10 @@ namespace AutomationFramework
             ["a"] = (0, 3), ["b"] = (1, 3), ["c"] = (2, 3),
         };
 
-        public TrafficPlanner() {
+        public TransportController TransportController { get; private set; }
+
+        public TrafficPlanner(TransportController transportController) {
+            TransportController = transportController;
             Initialize();
         }
 
@@ -67,10 +70,15 @@ namespace AutomationFramework
                 pathSet.Add(((int)edge.Start.Position.X, (int)edge.Start.Position.Y));
             }
 
+            Console.WriteLine($"pathset has: {pathSet.Count} indices");
+
             Console.WriteLine("\nA* Pathfinding Grid (12 chunks / 48 tiles):\n");
             PrintAsciiGrid(cols, rows, start, end, pathSet, obstacles);
 
             Console.WriteLine("traffic planner initialized");
+            Console.WriteLine("Initiating mover 1 on path...");
+
+            Task.Run(async () => { await TransportController.MoverOnPath(1, pathSet); }); //TODO make this assigned id dynamic
         }
 
         private bool IsInChunk(GridPosition pos, (int cx, int cy) chunk)

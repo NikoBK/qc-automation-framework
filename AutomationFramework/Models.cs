@@ -54,12 +54,12 @@ namespace AutomationFramework
             ushort cmdLabel = 0, POSITIONMODE posMode = POSITIONMODE.ABSOLUTE, LINEARPATHTYPE pathType = LINEARPATHTYPE.XTHENY,
             double finalSpdMetersPs = 0, double maxSpdMetersPs = 0.5, double maxAccelerationMetersPs2 = 10)
         {
-            Console.WriteLine($"Shuttle {Id} is moving!");
+            Console.WriteLine($"<MOVER{Id}>: Currently moving!");
             cmd.LinearMotionSI(cmdLabel, Id, posMode, pathType, pos.X, pos.Y, finalSpdMetersPs, maxSpdMetersPs, maxAccelerationMetersPs2);
-            Console.WriteLine("finished moving");
+            Console.WriteLine($"<MOVER{Id}>: finished moving");
 
             await Task.Delay(1000); // Buffer time to get the mover moving.
-            Console.WriteLine("time delay of 1s passed");
+            Console.WriteLine($"<MOVER{Id}>: time delay of 1s passed");
         }
     }
 

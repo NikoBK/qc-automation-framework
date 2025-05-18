@@ -8,7 +8,7 @@
         {
             Console.WriteLine("Starting MES...");
             var mes = new MES();
-            await mes.Test();
+            await Task.Delay(1500);// mes.Test();
         }
     }
 }

@@ -1,5 +1,6 @@
 using PMCLIB;
 using System.Numerics;
+using Roy_T.AStar.Paths;
 
 namespace AutomationFramework
 {
@@ -56,6 +57,25 @@ namespace AutomationFramework
 
             await mover.MoverToPosition(_xbotCmd, pos, pathType: pathType, maxSpdMetersPs: spd, maxAccelerationMetersPs2: maxAccel);
             Console.WriteLine($"Mover ({id}) was succesfully moved to position!");
+        }
+
+        public async Task MoverOnPath(int id, HashSet<(int, int)> pathSet) {
+            int index = 0; //TEST
+
+            //await MoverToPosition(id, new Vector2(0.080f, 0.880f), pathType: LINEARPATHTYPE.XTHENY, spd: 0.5, maxAccel: 5);
+
+            foreach (var point in pathSet) {
+                index++;
+                Console.WriteLine($"Iterating on index {index} / {pathSet.Count}");
+                var xBotInfo = _xbotCmd.GetAllXbotInfo().AllXbotInfoList[id - 1];
+                Console.WriteLine($"Current position is: {xBotInfo.XPos},{xBotInfo.YPos}");
+                var x = (float)xBotInfo.XPos + (float)point.Item1;
+                Console.WriteLine($"Calculated x to be: {x}");
+                var y = (float)xBotInfo.YPos - (float)point.Item2;
+                Console.WriteLine($"Calculated y to be: {y}");
+                await MoverToPosition(id, new Vector2(x,y), pathType: LINEARPATHTYPE.XTHENY, spd: 0.5, maxAccel: 5);
+                //await Task.Delay(1000);
+            }
         }
 
         /// <summary>
