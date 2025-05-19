@@ -29,68 +29,15 @@ namespace AStar_test
             double travelTime = 0;
             double totalTravelTime = 0;
 
-            DateTime startTime = new DateTime();
-
             for (int i = 0; i < path.Edges.Count; i++)
             {
-                //Console.WriteLine($"X: {path.Edges[i].End.Position.X}, Y: {path.Edges[i].End.Position.Y}");
-
                 point.X = path.Edges[i].End.Position.X + 0.06f;
                 point.Y = path.Edges[i].End.Position.Y + 0.06f;
 
-                if (i == 0)
-                {
-                    startTime = DateTime.Now;
-                }
                 travelTime = MoveBots.MoveBot(xbotID, new PointF(point.X, point.Y));
                 totalTravelTime += travelTime;
-                //Console.WriteLine($"Estimated travel time move {i}: {travelTime}");
             }
             Console.WriteLine($"ACOPOS estimated total travel time: {totalTravelTime}");
-
-            /*
-            bool botIdle = false;
-            while (!botIdle)
-            {
-                botIdle = Routines.XbotIdle(xbotID);
-            }
-            */
-
-            /* One tile movement time test
-            Console.WriteLine($"");
-            DateTime lastTime = startTime;
-            for (int i = 0; i < path.Edges.Count; i++)
-            {
-                point.X = path.Edges[i].End.Position.X + 0.06f;
-                point.Y = path.Edges[i].End.Position.Y + 0.06f;
-
-                if (i == path.Edges.Count-1)
-                {
-                    while (!Routines.XbotIdle(xbotID))
-                    {
-
-                    }
-                    TimeSpan oneTileTime2 = DateTime.Now - lastTime;
-                    lastTime = DateTime.Now;
-                    Console.WriteLine($"Recorded travel time move {i}: {oneTileTime2}");
-                    break;
-                }
-                while (true)
-                {
-                    if (Routines.GetXbotPos(xbotID).X > point.X + 0.001f || Routines.GetXbotPos(xbotID).Y > point.Y + 0.001f)
-                    {
-                        break;
-                    }
-                }
-                TimeSpan oneTileTime = DateTime.Now - lastTime;
-                lastTime = DateTime.Now;
-                Console.WriteLine($"Recorded travel time move {i}: {oneTileTime}");
-            }
-            */
-            //TimeSpan timeElapsed = DateTime.Now - startTime;
-            
-            //Console.WriteLine($"");
-            //Console.WriteLine($"Recorded travel time: {timeElapsed}");
         }
     }
 }

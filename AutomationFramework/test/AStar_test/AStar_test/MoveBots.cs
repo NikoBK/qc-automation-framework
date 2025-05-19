@@ -15,12 +15,9 @@ namespace AStar_test
 
         public static double MoveBot(int xbot, PointF Pos)
         {
-            //Console.WriteLine($"X: {Pos.X}, Y: {Pos.Y}");
-
             MotionRtn rtnVal = _xbotCommand.LinearMotionSI(0, xbot, 0, 0, Pos.X, Pos.Y, 0, 0.2, 2);
 
             return rtnVal.TravelTimeSecs;
-
-        }
+        }                                                                                                                                                                                           
     }
 }

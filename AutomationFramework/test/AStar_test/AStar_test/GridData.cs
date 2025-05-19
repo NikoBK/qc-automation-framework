@@ -19,7 +19,7 @@ namespace AStar_test
             var cellSize = new RoySize(Distance.FromMeters(0.120f), Distance.FromMeters(0.120f));
             var traversalVelocity = Velocity.FromMetersPerSecond(0.1678f);
             var grid = Grid.CreateGridWithLateralConnections(gridSize, cellSize, traversalVelocity);
-            /*
+            
             grid.DisconnectNode(new GridPosition(6, 0));
             grid.DisconnectNode(new GridPosition(7, 0));
             grid.DisconnectNode(new GridPosition(6, 1));
@@ -36,7 +36,11 @@ namespace AStar_test
             grid.DisconnectNode(new GridPosition(2, 3));
             grid.DisconnectNode(new GridPosition(3, 2));
             grid.DisconnectNode(new GridPosition(3, 3));
-            */
+            grid.DisconnectNode(new GridPosition(2, 4));
+            grid.DisconnectNode(new GridPosition(3, 4));
+            grid.DisconnectNode(new GridPosition(2, 5));
+            grid.DisconnectNode(new GridPosition(3, 5));
+            
             return grid;
         }
     }
