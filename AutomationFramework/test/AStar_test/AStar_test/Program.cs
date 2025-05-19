@@ -28,10 +28,10 @@ namespace AStar_test
                 int[] goalPoint1 = new int[2];
                 int[] goalPoint2 = new int[2];
                 int[] goalPoint3 = new int[2];
-                goalPoint0[0] = 7;
-                goalPoint0[1] = 4;
-                goalPoint1[0] = 3;
-                goalPoint1[1] = 0;
+                goalPoint0[0] = 0;
+                goalPoint0[1] = 3;
+                goalPoint1[0] = 4;
+                goalPoint1[1] = 7;
                 goalPoint2[0] = 3;
                 goalPoint2[1] = 0;
                 goalPoint3[0] = 4;
