@@ -7,18 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RoySize = Roy_T.AStar_time_expanded.Primitives.Size;
-using DrawSize = System.Drawing.Size;
 
 namespace AStar_test
 {
     public class GridData
     {
-        public Grid Data()
+        public static Grid grid;
+
+        public void InitGrid(int columns = 8, int rows = 8, float cellDistance = 0.120f, float velocity = 0.1678f)
         {
-            var gridSize = new GridSize(columns: 8, rows: 8);
-            var cellSize = new RoySize(Distance.FromMeters(0.120f), Distance.FromMeters(0.120f));
-            var traversalVelocity = Velocity.FromMetersPerSecond(0.1678f);
-            var grid = Grid.CreateGridWithLateralConnections(gridSize, cellSize, traversalVelocity);
+            var gridSize = new GridSize(columns, rows);
+            var cellSize = new RoySize(Distance.FromMeters(cellDistance), Distance.FromMeters(cellDistance));
+            var traversalVelocity = Velocity.FromMetersPerSecond(velocity);
+            grid = Grid.CreateGridWithLateralConnections(gridSize, cellSize, traversalVelocity);
             
             grid.DisconnectNode(new GridPosition(6, 0));
             grid.DisconnectNode(new GridPosition(7, 0));
@@ -40,8 +41,6 @@ namespace AStar_test
             grid.DisconnectNode(new GridPosition(3, 4));
             grid.DisconnectNode(new GridPosition(2, 5));
             grid.DisconnectNode(new GridPosition(3, 5));
-            
-            return grid;
         }
     }
 }

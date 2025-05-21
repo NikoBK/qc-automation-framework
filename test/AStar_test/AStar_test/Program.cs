@@ -9,39 +9,35 @@ namespace AStar_test
 {
     internal class Program
     {
+        private static Dictionary<int, Point> goalPoints = new Dictionary<int, Point>();
         static void Main(string[] args)
         {
-            PathHandler pathHandler = new PathHandler();
+            PathPlanner pathPlanner = new PathPlanner();
             GridData gridData = new GridData();
+            MoveBots moveBots = new MoveBots();
 
             if (Routines.RunStartUpRoutine())
             {
                 int[] xbotIDs = Routines.GetIds();
+                gridData.InitGrid();
 
-                var grid = gridData.Data();
-                int[] goalPoint0 = new int[2];
-                int[] goalPoint1 = new int[2];
-                int[] goalPoint2 = new int[2];
-                int[] goalPoint3 = new int[2];
-                goalPoint0[0] = 5;
-                goalPoint0[1] = 3;
+                for (int i = 0; i < xbotIDs.Length; i++)
+                {
+                    goalPoints.Add(xbotIDs[i], new Point(5, i));
+                }
 
-                goalPoint1[0] = 4;
-                goalPoint1[1] = 0;
+                foreach (var bot in xbotIDs)
+                {
+                    List<PointF> path = pathPlanner.Pathing(bot, goalPoints[bot]);
 
-                goalPoint2[0] = 4;
-                goalPoint2[1] = 7;
+                    foreach (var point in path)
+                    {
+                        moveBots.MoveBot(bot, point);
+                    }
+                }
 
-                goalPoint3[0] = 0;
-                goalPoint3[1] = 3;
-
-                pathHandler.pathing(xbotIDs[0], goalPoint0, grid);
-                pathHandler.pathing(xbotIDs[1], goalPoint1, grid);
-                pathHandler.pathing(xbotIDs[2], goalPoint2, grid);
-                pathHandler.pathing(xbotIDs[3], goalPoint3, grid);
-
-                Console.WriteLine($"Desired end point: {goalPoint1[0]}, {goalPoint1[1]}");
-                Console.WriteLine($"End point reached: {Routines.GetXbotGridPoint(xbotIDs[0])[0]}, {Routines.GetXbotGridPoint(xbotIDs[0])[1]}");
+                //Console.WriteLine($"Desired end point: {goalPoint[0]}, {goalPoint[1]}");
+                //Console.WriteLine($"End point reached: {Routines.GetXbotGridPoint(xbotIDs[0])[0]}, {Routines.GetXbotGridPoint(xbotIDs[0])[1]}");
             }
             else
             {
