@@ -9,7 +9,7 @@ namespace AutomationFramework
     public class TrafficPlanner
     {
         public TrafficPlanner() {
-            Console.WriteLine("traffic planner initialized");
+            Console.WriteLine("traffic planner initialized!");
         }
 
         public void Initialize() {
