@@ -67,9 +67,17 @@ namespace AutomationFramework
     {
         public string? Name { get; private set; }
         public MachineState State { get; private set; }
+        public Vector2? Entrance;
+        public Vector2? Exit;
+        public VialRack? rack;
+        public Logger? logger;
 
-        public virtual void Start(string name) {
+        public virtual void Start(string name, Vector2 entrance, Vector2 exit) {
             Name = name;
+            Entrance = entrance;
+            Exit = exit;
+            logger = new Logger(name);
+            logger.Log($"Created station");
             State = MachineState.IDLE;
         }
     }
