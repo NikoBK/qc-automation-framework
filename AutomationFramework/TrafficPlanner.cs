@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Drawing;
 
 namespace AutomationFramework
 {
@@ -8,12 +9,27 @@ namespace AutomationFramework
     /// </summary>
     public class TrafficPlanner
     {
+        PathPlanner pathPlanner;
+        GridData gridData;
+
         public TrafficPlanner() {
+            pathPlanner = new PathPlanner();
+            gridData = new GridData();
             Console.WriteLine("traffic planner initialized!");
         }
 
         public void Initialize() {
+            gridData.InitGrid();
+        }
 
+        public void GeneratePath(int xbotID, Point goalPoint)
+        {
+            List<PointF> path = pathPlanner.Pathing(xbotID, goalPoint);
+
+            foreach (var point in path)
+            {
+                Console.WriteLine($"Genrated path: {point}");
+            }
         }
 
         //TODO implement some kind of path planning here.

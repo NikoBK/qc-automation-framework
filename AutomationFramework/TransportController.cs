@@ -21,13 +21,13 @@ namespace AutomationFramework
             bool started = RunStartupRoutine();
             if (started)
             {
-                Console.WriteLine("<TransportController>: Started!");
+                /*Console.WriteLine("<TransportController>: Started!");
                 var moverIds = GetIds();
                 foreach (var id in moverIds) {
                     Mover mover = new Mover(id);
                     _movers.Add(mover.Id, mover);
                     Console.WriteLine($"Mover with id {id} has been initialized");
-                }
+                }*/
             }
             else {
                 Console.WriteLine("<TransportController>: Startup failed - StartupRoutine failed");
