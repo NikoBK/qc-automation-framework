@@ -13,7 +13,7 @@
 	<HintPath>libs/PMCLIB.dll</HintPath>
     </Reference>
     <Reference Include="Roy-T.AStar_time_expanded">
-      <HintPath>libs\Roy-T.AStar_time_expanded.dll</HintPath>
+      <HintPath>..\..\..\..\source\libraries\C#\Roy-T_AStar_time_expanded\Roy-T.AStar\bin\Debug\netstandard2.0\Roy-T.AStar_time_expanded.dll</HintPath>
     </Reference>
   </ItemGroup>
 

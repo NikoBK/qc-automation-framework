@@ -21,10 +21,14 @@ namespace AStar_test
                 int[] xbotIDs = Routines.GetIds();
                 gridData.InitGrid();
 
-                for (int i = 0; i < xbotIDs.Length; i++)
+                /*for (int i = 0; i < xbotIDs.Length; i++)
                 {
                     goalPoints.Add(xbotIDs[i], new Point(5, i));
-                }
+                }*/
+
+                goalPoints.Add(xbotIDs[0], new Point(2, 6));
+                goalPoints.Add(xbotIDs[1], new Point(0, 1));
+                goalPoints.Add(xbotIDs[2], new Point(5, 7));
 
                 foreach (var bot in xbotIDs)
                 {
@@ -33,6 +37,7 @@ namespace AStar_test
                     foreach (var point in path)
                     {
                         moveBots.MoveBot(bot, point);
+                        Console.WriteLine($"Path point: {point}");
                     }
                 }
 

@@ -26,9 +26,9 @@ namespace AStar_test
 
             Path path = pathFinder.FindPath(new GridPosition(currentPoint[0], currentPoint[1]), new GridPosition(goalPoint.X, goalPoint.Y), GridData.grid);
 
-            //Console.WriteLine($"type: {path.Type}, distance: {path.Distance}, duration {path.Duration}");
+            Console.WriteLine($"type: {path.Type}, distance: {path.Distance}, duration {path.Duration}");
 
-            //Console.WriteLine($"Edge count: {path.Edges.Count}");
+            Console.WriteLine($"Edge count: {path.Edges.Count}");
 
             foreach (var edge in path.Edges)
             {

@@ -1,4 +1,5 @@
 using System.Numerics;
+using System.Drawing;
 
 namespace AutomationFramework
 {
@@ -26,7 +27,9 @@ namespace AutomationFramework
 
         public async Task Test() { //TODO for testing, remove eventually or refactor to start
             TrafficPlanner.Initialize();
-            TrafficPlanner.GeneratePath();
+            TrafficPlanner.GeneratePath(1, new Point(1, 1));
+            TrafficPlanner.GeneratePath(2, new Point(5, 1));
+            TrafficPlanner.GeneratePath(3, new Point(5, 1));
             // test coord #1: X: 650, Y:900
             // test coord #2: X: 50, Y:550
             //_ = TransportController.MoverToPosition(1, Constants.TestPos1);

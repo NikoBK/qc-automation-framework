@@ -41,6 +41,19 @@ namespace AStar_test
             grid.DisconnectNode(new GridPosition(3, 4));
             grid.DisconnectNode(new GridPosition(2, 5));
             grid.DisconnectNode(new GridPosition(3, 5));
+
+            grid.DisconnectNode(new GridPosition(0, 2));
+            grid.DisconnectNode(new GridPosition(0, 3));
+            grid.DisconnectNode(new GridPosition(0, 4));
+            grid.DisconnectNode(new GridPosition(0, 5));
+            grid.DisconnectNode(new GridPosition(0, 6));
+            grid.DisconnectNode(new GridPosition(0, 7));
+            grid.DisconnectNode(new GridPosition(1, 2));
+            grid.DisconnectNode(new GridPosition(1, 3));
+            grid.DisconnectNode(new GridPosition(1, 4));
+            grid.DisconnectNode(new GridPosition(1, 5));
+            grid.DisconnectNode(new GridPosition(1, 6));
+            grid.DisconnectNode(new GridPosition(1, 7));
         }
     }
 }
