@@ -8,6 +8,9 @@ namespace AutomationFramework
         public static string CapHandlerAddr = "192.168.10.42";
         public static int CapHandlerPort = 54321;
 
+        public static string FestoAddr = "192.168.10.42";
+        public static int FestoPort = 12345;
+
         // Path Planning
         public static Dictionary<int, Vector2> HighwayViaPoints = new Dictionary<int, Vector2>() {
             // Key: Station Position, Value: Pos (X, Y)

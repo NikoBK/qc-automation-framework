@@ -1,0 +1,284 @@
+{
+    "ordering": [
+        [
+            "A1",
+            "B1",
+            "C1",
+            "D1"
+        ],
+        [
+            "A2",
+            "B2",
+            "C2",
+            "D2"
+        ],
+        [
+            "A3",
+            "B3",
+            "C3",
+            "D3"
+        ],
+        [
+            "A4",
+            "B4",
+            "C4",
+            "D4"
+        ],
+        [
+            "A5",
+            "B5",
+            "C5",
+            "D5"
+        ]
+    ],
+    "brand": {
+        "brand": "SBS_HPlC",
+        "brandId": [
+            "#420"
+        ]
+    },
+    "metadata": {
+        "displayName": "SBS_HPlC 20 Tube Rack with Novo 3 mL",
+        "displayCategory": "tubeRack",
+        "displayVolumeUnits": "µL",
+        "tags": []
+    },
+    "dimensions": {
+        "xDimension": 127.76,
+        "yDimension": 85.48,
+        "zDimension": 59
+    },
+    "wells": {
+        "A1": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 22.88,
+            "y": 73.49,
+            "z": 28
+        },
+        "B1": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 22.88,
+            "y": 52.99,
+            "z": 28
+        },
+        "C1": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 22.88,
+            "y": 32.49,
+            "z": 28
+        },
+        "D1": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 22.88,
+            "y": 11.99,
+            "z": 28
+        },
+        "A2": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 43.38,
+            "y": 73.49,
+            "z": 28
+        },
+        "B2": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 43.38,
+            "y": 52.99,
+            "z": 28
+        },
+        "C2": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 43.38,
+            "y": 32.49,
+            "z": 28
+        },
+        "D2": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 43.38,
+            "y": 11.99,
+            "z": 28
+        },
+        "A3": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 63.88,
+            "y": 73.49,
+            "z": 28
+        },
+        "B3": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 63.88,
+            "y": 52.99,
+            "z": 28
+        },
+        "C3": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 63.88,
+            "y": 32.49,
+            "z": 28
+        },
+        "D3": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 63.88,
+            "y": 11.99,
+            "z": 28
+        },
+        "A4": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 84.38,
+            "y": 73.49,
+            "z": 28
+        },
+        "B4": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 84.38,
+            "y": 52.99,
+            "z": 28
+        },
+        "C4": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 84.38,
+            "y": 32.49,
+            "z": 28
+        },
+        "D4": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 84.38,
+            "y": 11.99,
+            "z": 28
+        },
+        "A5": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 104.88,
+            "y": 73.49,
+            "z": 28
+        },
+        "B5": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 104.88,
+            "y": 52.99,
+            "z": 28
+        },
+        "C5": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 104.88,
+            "y": 32.49,
+            "z": 28
+        },
+        "D5": {
+            "depth": 31,
+            "totalLiquidVolume": 3000,
+            "shape": "circular",
+            "diameter": 6,
+            "x": 104.88,
+            "y": 11.99,
+            "z": 28
+        }
+    },
+    "groups": [
+        {
+            "brand": {
+                "brand": "Novo",
+                "brandId": [
+                    "#2"
+                ]
+            },
+            "metadata": {
+                "wellBottomShape": "flat",
+                "displayCategory": "tubeRack"
+            },
+            "wells": [
+                "A1",
+                "B1",
+                "C1",
+                "D1",
+                "A2",
+                "B2",
+                "C2",
+                "D2",
+                "A3",
+                "B3",
+                "C3",
+                "D3",
+                "A4",
+                "B4",
+                "C4",
+                "D4",
+                "A5",
+                "B5",
+                "C5",
+                "D5"
+            ]
+        }
+    ],
+    "parameters": {
+        "format": "irregular",
+        "quirks": [],
+        "isTiprack": false,
+        "isMagneticModuleCompatible": false,
+        "loadName": "sbshplc_20_tuberack_3000ul"
+    },
+    "namespace": "custom_beta",
+    "version": 1,
+    "schemaVersion": 2,
+    "cornerOffsetFromSlot": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+    }
+}

@@ -6,9 +6,10 @@
     {
         public static async Task Main(string[] args)
         {
+            Routines.RunStartUpRoutine();
             Console.WriteLine("Starting MES...");
             var mes = new MES();
-            await mes.Test();
+            mes.MixTest();
         }
     }
 }

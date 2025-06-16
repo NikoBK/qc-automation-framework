@@ -15,7 +15,7 @@ namespace AutomationFramework
             string moduleDir = Path.Combine("Logs", moduleName);
             Directory.CreateDirectory(moduleDir);
 
-            logPath = Path.Combine(moduleDir, $"{moduleName}_logs");
+            logPath = Path.Combine(moduleDir, $"{moduleName}_logs.txt");
         }
 
         public void Log(string message)
