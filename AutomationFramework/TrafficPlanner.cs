@@ -19,6 +19,5 @@ namespace AutomationFramework
         }
 
         //TODO implement some kind of path planning here.
-        //Emil was here, his Astar was not..
     }
 }
