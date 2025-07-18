@@ -8,14 +8,17 @@ namespace AutomationFramework
     /// </summary>
     public class TrafficPlanner
     {
-        public TrafficPlanner() {
+        public TrafficPlanner()
+        {
             Console.WriteLine("traffic planner initialized");
         }
 
-        public void Initialize() {
+        public void Initialize()
+        {
 
         }
 
         //TODO implement some kind of path planning here.
+        //Emil was here, his Astar was not..
     }
 }
